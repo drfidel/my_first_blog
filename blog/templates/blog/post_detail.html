@@ -5,7 +5,7 @@
 
         <h2>{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
-        
+
         {% if post.published_date %}
             <div class="date">
                 {{ post.published_date }}
@@ -17,7 +17,11 @@
         {% endif %}
 
         {% if user.is_authenticated %}
-        <a class="btn btn-default" href="{% url 'post_delete' pk=post.pk %}"><span class="glyphicon glyphicon-envelope"></span></a>
+        <a class="btn btn-default" href="{% url 'post_delete' pk=post.pk %}"><span class="glyphicon glyphicon-trash"></span></a>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+        <a class="btn btn-default" href="{% url 'post_list' %}"><span class="glyphicon glyphicon-list"></span></a>
         {% endif %}
 
         

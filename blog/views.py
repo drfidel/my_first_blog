@@ -44,8 +44,8 @@ def post_edit(request, pk):
 
 def post_delete(request, pk):
 	post = get_object_or_404(Post, pk=pk)
-	context = {}
+	
 	if request.method == "POST":
 		post.delete()
 		return HttpResponseRedirect("/")
-	return render(request, "delete_view.html", context)
+	return render(request, 'blog/post_delete.html')
