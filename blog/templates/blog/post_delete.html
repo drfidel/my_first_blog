@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="main"> 
+        <!-- Create a Form -->
+            {% if user.is_authenticated %}
+            <form method="POST"> 
+            <!-- Security token by Django -->
+                {% csrf_token %} 
+                    Are you sure you want to delete this item ? 
+                    <input type="submit" value="Yes" /> 
+                    <a href="/"> Cancel </a> 
+            </form> 
+            {% endif %}
+    </div> 
+{% endblock %}
