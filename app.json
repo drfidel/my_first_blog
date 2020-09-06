@@ -2,7 +2,7 @@
     "name": "Start on Heroku: Python",
     "description": "A Blogging App, which can easily be deployed to Heroku.",
     "image": "heroku/python",
-    "repository": "https://github.com/heroku/python-getting-started",
+    "repository": "https://github.com/drfidel/my_first_blog",
     "keywords": ["python", "django" ],
     "addons": [ "heroku-postgresql" ],
     "env": {
