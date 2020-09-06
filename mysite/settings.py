@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 from settings_key import DJANGO_SECRET_KEY
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -23,7 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # Read secret key from a file
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', DJANGO_SECRET_KEY)
+#SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', DJANGO_SECRET_KEY)
+SECRET_KEY = "CHANGE_ME!!!! (P.S. the SECRET_KEY environment variable will be used, if set, instead)."
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -126,6 +128,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
